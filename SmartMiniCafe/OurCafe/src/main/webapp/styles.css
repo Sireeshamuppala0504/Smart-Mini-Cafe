@@ -1,0 +1,417 @@
+/* Resetting styles */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+/* Body - Background fixed (no parallax) */  
+body {  
+    font-family: Arial, sans-serif;  
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/876/132/1002/coffee-cup-coffee-beans-aroma-wallpaper-preview.jpg');  
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-position: center;  
+    background-attachment: fixed;  
+    height: 100vh;  
+    background-color: #f5f5f5;
+    overflow-x: hidden;  
+}  
+
+/* Slideshow styles */
+.slideshow-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+/* Header */  
+header {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    background-color: rgba(51, 51, 51, 0.8);  
+    padding: 10px 20px;  
+    color: #fff;  
+}  
+
+header .logo {  
+    display: flex;  
+    align-items: center;  
+}  
+
+header .logo img {  
+    height: 40px;  
+    margin-right: 10px;  
+}  
+
+/* Intro Section */  
+.intro-section {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: flex-end;  
+    justify-content: center;  
+    height: 100vh;  
+    padding: 0 50px;  
+}  
+
+/* Box for intro content */  
+.intro-box {  
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 30px;  
+    border-radius: 10px;  
+    text-align: left;  
+    max-width: 500px;  
+    margin-bottom: 20px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+    animation: fadeIn 2s ease-in-out;  
+}  
+
+@keyframes fadeIn {  
+    from { opacity: 0; }  
+    to { opacity: 1; }  
+}  
+
+.intro-box h2 {  
+    font-size: 32px;  
+    font-weight: bold;  
+}  
+
+.intro-box p {  
+    font-size: 18px;  
+    line-height: 1.5;  
+}  
+
+/* Table Selection */  
+.table-selection {  
+    display: flex;  
+    align-items: center;  
+    justify-content: flex-end;
+    margin-top: 30px;  
+    margin-right: 5%;  
+    width: 100%;
+}  
+
+.start-button {  
+    padding: 12px 30px;  
+    font-size: 20px;  
+    background-color: #007bff;  
+    color: #fff;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: transform 0.3s ease, background-color 0.3s ease;  
+}  
+
+.start-button:hover {  
+    background-color: #0056b3;  
+    transform: scale(1.05);  
+}  
+
+/* Gallery Box Styles */  
+.gallery-box {  
+    background-color: #f5e1c8;  
+    padding: 50px;  
+    border-radius: 10px;  
+    text-align: center;   
+    margin: 0 auto;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+    width: 90%;  
+}  
+
+.gallery-box h2 {  
+    font-size: 35px;  
+    margin-bottom: 20px;  
+}  
+
+.gallery-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.photo-gallery {  
+    display: flex;  
+    gap: 15px;  
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 90%;
+    padding: 10px 0;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}  
+
+.photo-gallery::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.photo-box {  
+    position: relative;  
+    width: 300px;
+    height: 280px;
+    flex-shrink: 0;
+    overflow: hidden;  
+}  
+
+.photo-box img {  
+    width: 100%;  
+    height: 100%;  
+    object-fit: cover;  
+    transition: 0.5s ease;  
+}  
+
+.photo-box .overlay {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(0, 0, 0, 0.5);  
+    color: white;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    opacity: 0;  
+    transition: opacity 0.5s ease;  
+    font-size: 20px;  
+    font-weight: bold;  
+}  
+
+.photo-box:hover .overlay {  
+    opacity: 1;  
+}  
+
+/* Coffee Introduction Section */  
+.coffee-intro {  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    padding: 80px 80px;  
+    gap: 20px;
+} 
+
+.text-box {
+    max-width: 700px;
+}
+
+.text-box h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #6b3e26;
+}
+
+.text-box p {
+    font-size: 19px;
+    line-height: 1.6;
+    color: #000000;
+    margin: 15px 0;
+}
+
+.image-box video {
+    width: 580px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Combined Coffee Gallery Section */  
+.coffee-gallery-section {  
+    background: #fdfdfd;
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+/* Keyframes for animations */  
+@keyframes slideDown {  
+    from {  
+        transform: translateY(-50px); /* Start higher for more dramatic effect */  
+        opacity: 0; /* Start invisible */  
+    }  
+    to {  
+        transform: translateY(0); /* End in place */  
+        opacity: 1; /* Fully visible */  
+    }  
+}  
+
+@keyframes slideUp {  
+    from {  
+        transform: translateY(50px); /* Start lower for more dramatic effect */  
+        opacity: 0; /* Start invisible */  
+    }  
+    to {  
+        transform: translateY(0); /* End in place */  
+        opacity: 1; /* Fully visible */  
+    }  
+}  
+
+/* Apply animations to the respective elements */  
+.intro-box {  
+    animation: slideDown 1.2s ease-in-out forwards; /* Increased duration for intro box */  
+}  
+
+.table-selection {  
+    animation: slideUp 1.2s ease-in-out forwards; /* Increased duration for table selection */  
+}  
+
+/* Media Query for Mobile Devices */  
+@media (max-width: 768px) {  
+    /* Body - minimal padding */  
+    body {  
+        padding: 0;  
+        font-size: 14px; /* Slightly smaller base font size */  
+    }  
+
+    /* Header styles */  
+    header {  
+        flex-direction: column; /* Stack items */  
+        align-items: center;  
+        padding: 15px; /* Add space around header */  
+        text-align: center;  
+    }  
+
+    header .logo img {  
+        height: 30px; /* Smaller logo for mobile */  
+    }  
+
+    /* Intro Section */  
+    .intro-section {  
+        padding: 15px; /* Reduce padding for smaller screens */  
+        align-items: center;  
+    }  
+
+    /* Box for intro content */  
+    .intro-box {  
+        padding: 20px; /* Keep padding manageable */  
+        max-width: 90%; /* Responsive box */  
+        margin: 0 auto; /* Centering */  
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Less shadow on mobile */  
+    }  
+
+    /* Title and Text adjustments */  
+    .intro-box h2 {  
+        font-size: 24px; /* Reduced font size */  
+    }  
+
+    .intro-box p {  
+        font-size: 16px; /* Smaller paragraph text */  
+    }  
+
+    /* Table Selection */  
+    .table-selection {  
+        flex-direction: column; /* Stack vertically */  
+        align-items: center; /* Center elements */  
+        margin-top: 15px; /* Adjust spacing */  
+        gap: 10px; /* Space between elements */  
+    }  
+
+    .start-button {  
+        width: 100%; /* Full-width button */  
+        padding: 12px; /* Increased padding for easier touch */  
+        font-size: 18px; /* Increased font size */  
+    }  
+
+    /* Gallery Box Styles */  
+    .gallery-box {  
+        padding: 20px; /* Responsive padding */  
+        width: 100%; /* Full width */  
+    }  
+
+    /* Photo Adjustments */  
+    .photo-box {  
+        width: 90%; /* Make photos responsive */  
+        height: auto; /* Allow height to adjust */  
+    }  
+
+    /* Coffee Introduction Section */  
+    .coffee-intro {  
+        flex-direction: column; /* Stack text and image */  
+        padding: 20px; /* Adjust padding */  
+    }  
+
+    .image-box video {  
+        width: 100%; /* Full width video */  
+        height: auto; /* Maintain aspect ratio */  
+    }  
+
+    .text-box {  
+        max-width: 100%; /* Full-width text box */  
+    }  
+
+    /* Font Sizes for Text */  
+    .text-box h2 {  
+        font-size: 26px; /* Adjusted size for headings */  
+    }  
+
+    .text-box p {  
+        font-size: 15px; /* Adjusted size for paragraph */  
+    }  
+
+    /* Caption Styles */  
+    .photo-caption {  
+        font-size: 20px; /* Font size for side captions */  
+    }  
+}

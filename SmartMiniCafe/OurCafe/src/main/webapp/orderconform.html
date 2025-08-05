@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: black;
+            overflow: hidden;
+            color: white;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            position: relative;
+            color: black;
+            max-width: 600px;
+            text-align: left;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .order-details {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: auto;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        .items-list {
+            margin: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            text-align: right;
+        }
+        .notes {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmed!</h1>
+        <p style="text-align:center;">Thank you for your purchase. Your order has been successfully placed.</p>
+        <div class="order-details" id="orderDetails">
+            <!-- Order details will be inserted here by JavaScript -->
+        </div>
+        <a href="index1.html" class="button">Back to Home</a>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Create confetti
+        const confettiContainer = document.createElement("div");
+        confettiContainer.className = "confetti";
+        document.body.appendChild(confettiContainer);
+        
+        for (let i = 0; i < 100; i++) {
+            let confetti = document.createElement("div");
+            confetti.style.position = "absolute";
+            confetti.style.width = "10px";
+            confetti.style.height = "10px";
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.top = "-10px";
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.opacity = Math.random();
+            confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+            confettiContainer.appendChild(confetti);
+        }
+
+     // Display order details
+        const orderData = JSON.parse(localStorage.getItem('currentOrder'));
+        const orderDetails = document.getElementById('orderDetails');
+        
+        if (orderData) {
+            // Calculate total by simply summing all item prices
+            const totalAmount = orderData.items.reduce((total, item) => {
+                const price = typeof item.price === 'string' 
+                    ? parseFloat(item.price.replace(/[^\d.-]/g, '')) 
+                    : item.price;
+                return total + price;
+            }, 0);
+
+            orderDetails.innerHTML = `
+                <div class="basic-info">
+                    <p><strong>Table Number:</strong> ${orderData.tableNumber}</p>
+                    <p><strong>Order Date:</strong> ${orderData.date}</p>
+                    <p><strong>Estimated Ready Time:</strong> ${orderData.estimatedTime}</p>
+                </div>
+                
+                <div class="items-list">
+                    <h3>Your Order:</h3>
+                    ${orderData.items.map(item => {
+                        const price = typeof item.price === 'string' 
+                            ? parseFloat(item.price.replace(/[^\d.-]/g, '')) 
+                            : item.price;
+                        return `
+                            <div class="item-row">
+                                <span>${item.name} × ${item.quantity}</span>
+                                <span>${orderData.items[0].price.includes('¥') ? '¥' : '₹'}${price.toFixed(2)}</span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                
+                <div class="total">
+                    <strong>Total Amount:</strong> ${orderData.items[0].price.includes('¥') ? '¥' : '₹'}${totalAmount.toFixed(2)}
+                </div>
+                
+                ${orderData.notes ? `
+                <div class="notes">
+                    <strong>Special Instructions:</strong>
+                    <p>${orderData.notes}</p>
+                </div>
+                ` : ''}
+            `;
+        } else {
+            orderDetails.innerHTML = `
+                <div style="text-align:center; color:#ff0000; margin:20px 0;">
+                    <p>No order details found. Please place a new order.</p>
+                    <a href="cart.html" class="button" style="margin-top:10px;">Back to Cart</a>
+                </div>
+            `;
+        }
+    });
+
+    // Confetti animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beverages</title>
+  <link rel="stylesheet" href="page1.css">
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Link -->
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://www.simplejoy.com/wp-content/uploads/2023/11/daiquiri.jpg">
+      <h3>Daiquiri</h3>
+      <p>A tropical blend of sweet, citrusy perfection!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Daiquiri",
+        price: "₹240",
+        description: "A tropical blend of sweet, citrusy perfection!",
+        image: "https://www.simplejoy.com/wp-content/uploads/2023/11/daiquiri.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/983331646/photo/gin-fizz-cocktail-with-lemon-cucumber-rosemary.jpg?s=612x612&w=0&k=20&c=ocyHPSXdZDrhLuGZUOrqMjL9FUVXl7B_hJTwY22X0gk=">
+      <h3>Gimlet</h3>
+      <p>Sleek, sharp, and effortlessly classy!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Gimlet",
+        price: "₹240",
+        description: "Sleek, sharp, and effortlessly classy!",
+        image: "https://media.istockphoto.com/id/983331646/photo/gin-fizz-cocktail-with-lemon-cucumber-rosemary.jpg?s=612x612&w=0&k=20&c=ocyHPSXdZDrhLuGZUOrqMjL9FUVXl7B_hJTwY22X0gk="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://thespicyapron.com/wp-content/uploads/2017/04/Bloody-Mary-Vertical-683x1024.jpg">
+      <h3>Bloody Mary</h3>
+      <p>Bold, spicy, and packed with attitude!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Bloody Mary",
+        price: "₹240",
+        description: "Bold, spicy, and packed with attitude!",
+        image: "https://thespicyapron.com/wp-content/uploads/2017/04/Bloody-Mary-Vertical-683x1024.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/921231012/fr/photo/margarita-cocktail-au-citron-vert-et-menthe.jpg?s=612x612&w=0&k=20&c=Jz9Yj74_0cCaHEPEcGGkBI2wNA7yDxWVT5nE52_k8tY=">
+      <h3>Margarita</h3>
+      <p>Classic, citrusy, and full of fiesta vibes!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Margarita",
+        price: "₹280",
+        description: "Classic, citrusy, and full of fiesta vibes!",
+        image: "https://media.istockphoto.com/id/921231012/fr/photo/margarita-cocktail-au-citron-vert-et-menthe.jpg?s=612x612&w=0&k=20&c=Jz9Yj74_0cCaHEPEcGGkBI2wNA7yDxWVT5nE52_k8tY="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1337677990/photo/cold-refreshment-organic-non-alcohol-cocktail-blackberry-mojito-with-berry-fruit-in-glass.jpg?s=612x612&w=0&k=20&c=TjU3MMleZ8XUkGYJ2SXQcwIFYdiqHnECKiWKNoZnuvA=">
+      <h3>Blackberry Mojito</h3>
+      <p>Dark, juicy, and irresistibly smooth!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Blackberry Mojito",
+        price: "₹200",
+        description: "Dark, juicy, and irresistibly smooth!",
+        image: "https://media.istockphoto.com/id/1337677990/photo/cold-refreshment-organic-non-alcohol-cocktail-blackberry-mojito-with-berry-fruit-in-glass.jpg?s=612x612&w=0&k=20&c=TjU3MMleZ8XUkGYJ2SXQcwIFYdiqHnECKiWKNoZnuvA="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/premium-photo/blue-mojito-with-mint-lemon-ice-cube_587392-71.jpg?semt=ais_hybrid">
+      <h3>Blue Mint Mojito</h3>
+      <p>A cool fusion of minty freshness and ocean-blue vibes!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Blue Mint Mojito",
+        price: "₹240",
+        description: "A cool fusion of minty freshness and ocean-blue vibes!",
+        image: "https://img.freepik.com/premium-photo/blue-mojito-with-mint-lemon-ice-cube_587392-71.jpg?semt=ais_hybrid"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://www.bakingbeauty.net/wp-content/uploads/2015/07/Blueberry-Mojito-e1436498769408.jpg">
+      <h3>Blueberry Spring</h3>
+      <p>A sip of berry bliss with a touch of spring magic!</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Blueberry Spring",
+        price: "₹220",
+        description: "A sip of berry bliss with a touch of spring magic!",
+        image: "https://www.bakingbeauty.net/wp-content/uploads/2015/07/Blueberry-Mojito-e1436498769408.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://recipesworthrepeating.com/wp-content/uploads/2021/06/apple-martini-recipe.jpg">
+      <h3>Green Apple Sparkles</h3>
+      <p>Crisp, bubbly, and full of tangy delight!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Green Apple Sparkles",
+        price: "₹240",
+        description: "Crisp, bubbly, and full of tangy delight!",
+        image: "https://recipesworthrepeating.com/wp-content/uploads/2021/06/apple-martini-recipe.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/free-photo/lychee-juice-lychee-fruit_1150-13685.jpg">
+      <h3>Litchi Blossom</h3>
+      <p>Delicate, floral, and refreshingly sweet!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Litchi Blossom",
+        price: "₹280",
+        description: "Delicate, floral, and refreshingly sweet!",
+        image: "https://img.freepik.com/free-photo/lychee-juice-lychee-fruit_1150-13685.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card">
+      <img src="https://allthehealthythings.com/wp-content/uploads/2020/05/Sparkling-Strawberry-Limeade-12-scaled.jpg">
+      <h3>Strawberry Lime Rush</h3>
+      <p>A zesty burst of strawberry and lime freshness!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Strawberry Lime Rush",
+        price: "₹200",
+        description: "A zesty burst of strawberry and lime freshness!",
+        image: "https://allthehealthythings.com/wp-content/uploads/2020/05/Sparkling-Strawberry-Limeade-12-scaled.jpg"
+      })'>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    // Load initial cart count
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error loading cart count:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>

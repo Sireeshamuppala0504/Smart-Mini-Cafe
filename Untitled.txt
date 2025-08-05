@@ -1,0 +1,904 @@
+To make your website more effective and attractive with animations, you can use a combination of CSS animations, transitions, and keyframes. Below are some advanced and visually appealing animations that you can add to your project. These animations will enhance the user experience and make your website more engaging.
+
+1. Fade-In with Scale Animation
+This animation makes elements fade in and scale up, creating a smooth and modern effect.
+
+css
+Copy
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-scale {
+    animation: fadeInScale 1s ease-out forwards;
+}
+Usage:
+Apply this animation to elements like cards, images, or text boxes.
+
+html
+Copy
+<div class="fade-in-scale">
+    <p>This element fades in and scales up!</p>
+</div>
+Run HTML
+2. Floating Animation
+This animation makes elements float up and down, giving a playful and dynamic effect.
+
+css
+Copy
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.float {
+    animation: float 3s infinite ease-in-out;
+}
+Usage:
+Apply this animation to images, icons, or buttons.
+
+html
+Copy
+<img src="image.jpg" alt="Floating Image" class="float">
+Run HTML
+3. Bounce Animation
+This animation makes elements bounce, adding a fun and energetic vibe.
+
+css
+Copy
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s infinite ease-in-out;
+}
+Usage:
+Apply this animation to call-to-action buttons or icons.
+
+html
+Copy
+<button class="bounce">Click Me!</button>
+Run HTML
+4. Rotating Animation
+This animation makes elements rotate continuously, creating a spinning effect.
+
+css
+Copy
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 4s infinite linear;
+}
+Usage:
+Apply this animation to logos, icons, or loading spinners.
+
+html
+Copy
+<img src="logo.png" alt="Rotating Logo" class="rotate">
+Run HTML
+5. Slide-In with Bounce
+This animation makes elements slide in from the side and bounce slightly when they stop.
+
+css
+Copy
+@keyframes slideInBounce {
+    0% {
+        transform: translateX(-100%);
+    }
+    70% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-in-bounce {
+    animation: slideInBounce 1s ease-out forwards;
+}
+Usage:
+Apply this animation to text boxes, images, or cards.
+
+html
+Copy
+<div class="slide-in-bounce">
+    <p>This element slides in and bounces!</p>
+</div>
+Run HTML
+6. Pulse Animation
+This animation makes elements pulse, creating a glowing or breathing effect.
+
+css
+Copy
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+Usage:
+Apply this animation to buttons, icons, or notifications.
+
+html
+Copy
+<button class="pulse">Pulse Button</button>
+Run HTML
+7. Waving Hand Animation
+This animation makes an element (like a hand icon) wave, adding a friendly touch.
+
+css
+Copy
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
+
+.wave {
+    animation: wave 1s infinite ease-in-out;
+}
+Usage:
+Apply this animation to hand icons or emojis.
+
+html
+Copy
+<span class="wave">👋</span>
+Run HTML
+8. Gradient Background Animation
+This animation creates a smooth gradient transition for backgrounds.
+
+css
+Copy
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 200% 200%;
+    animation: gradientBackground 5s infinite ease-in-out;
+}
+Usage:
+Apply this animation to sections, buttons, or headers.
+
+html
+Copy
+<div class="gradient-bg">
+    <p>This section has a gradient background animation!</p>
+</div>
+Run HTML
+9. Hover Zoom Effect
+This animation zooms in on an element when hovered, creating an interactive effect.
+
+css
+Copy
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.1);
+}
+Usage:
+Apply this animation to images, cards, or buttons.
+
+html
+Copy
+<img src="image.jpg" alt="Hover Zoom" class="hover-zoom">
+Run HTML
+10. Typewriter Effect
+This animation simulates a typewriter effect for text.
+
+css
+Copy
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 3s steps(40) forwards;
+}
+Usage:
+Apply this animation to headings or paragraphs.
+
+html
+Copy
+<h1 class="typewriter">Hello, World!</h1>
+Run HTML
+11. Flip Card Animation
+This animation flips a card to reveal content on the back.
+
+css
+Copy
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+Usage:
+Apply this animation to cards or product displays.
+
+html
+Copy
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p>Front Content</p>
+        </div>
+        <div class="flip-card-back">
+            <p>Back Content</p>
+        </div>
+    </div>
+</div>
+Run HTML
+12. Glowing Border Animation
+This animation creates a glowing border effect around an element.
+
+css
+Copy
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #00ff00;
+    }
+    50% {
+        box-shadow: 0 0 20px #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 5px #00ff00;
+    }
+}
+
+.glow-border {
+    border: 2px solid #00ff00;
+    animation: glow 2s infinite ease-in-out;
+}
+Usage:
+Apply this animation to buttons, cards, or input fields.
+
+html
+Copy
+<button class="glow-border">Glowing Button</button>
+Run HTML
+Final Notes
+Combine these animations to create a dynamic and engaging user experience.
+
+Use animations sparingly to avoid overwhelming the user.
+
+Test animations across different browsers to ensure compatibility.
+
+For scroll-triggered animations, consider using JavaScript if you need broader browser support.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bebas+Neue&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Satisfy&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  height: 4000px;
+}
+
+div.main {
+  background-image: url("img4.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: max(1000px, 100vw);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  padding: 0;
+}
+
+.main .box {
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.6;
+  background-color: black;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  max-width: 85vw;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  align-self: center;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.logo {
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.company {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  font-family: "Bona Nova SC", serif;
+  font-size: 20px;
+}
+
+.right {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 3;
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+  color: white;
+  font-family: "Bona Nova SC", serif;
+  position: relative;
+  list-style: none;
+}
+
+.signin {
+  background: rgb(253, 252, 252);
+  width: 89px;
+  height: 32px;
+  border-radius: calc(0.25rem - 0.0625rem);
+  z-index: 3;
+  position: relative;
+  font-family: "Bona Nova SC", serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgb(254, 254, 254);
+  color: rgb(5, 0, 0);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signin:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.signin:focus {
+  outline: 2px solid #040202;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100vw;
+}
+
+.welcomee {
+  font-family: "Amatic SC", serif;
+  color: white;
+}
+
+.middle {
+  width: 70vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+}
+
+.first {
+  font-size: xx-large;
+  font-family: "Tajawal", serif;
+}
+
+.third {
+  font-family: "Bona Nova SC", serif;
+  font-size: 75px;
+}
+
+.membership {
+  font-size: 22px;
+  font-weight: 500;
+  min-height: 3.2rem;
+  border-radius: 0.25rem;
+  background: rgb(255, 254, 255);
+  color: rgb(3, 0, 0);
+  border: 0px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+  font-family: "Bona Nova SC", serif;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.membership:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .signin, .membership {
+    font-size: 0.8rem;
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .content {
+    padding: 5%;
+  }
+
+  .middle {
+    width: 90%;
+    height: auto;
+  }
+
+  .first {
+    font-size: large;
+  }
+
+  .third {
+    font-size: 50px;
+  }
+
+  .membership {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .signin, .membership {
+    font-size: 0.75rem;
+    width: 80%;
+  }
+
+  .first, .third {
+    font-size: medium;
+  }
+
+  .middle {
+    width: 100%;
+  }
+}
+.feature-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: white;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and transform */
+}
+
+.feature-section.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide into view */
+}
+
+.feature-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80vw;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Content */
+.feature-content {
+  flex: 1;
+  padding: 20px;
+  font-family: "Bona Nova SC", serif;
+}
+
+.feature-content h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.feature-content p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Feature Image */
+.feature-image {
+  flex: 1;
+  text-align: center;
+}
+
+.feature-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Image Animation - Moves Up and Down */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-content,
+  .feature-image {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Image Animation - Moves Up and Down */
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .feature-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+  .feature-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-content p {
+    font-size: 1rem;
+  }
+
+  .feature-image {
+    margin-top: 20px;
+  }
+}
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.details-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: "Bona Nova SC", serif;
+}
+
+.details-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.details-box.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.combined-box {
+  width: 80vw; /* Combined width */
+  height: 300px; /* Set height */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Bona Nova SC", serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden; /* Ensure no image overflow */
+}
+
+.combined-box h3 {
+  font-size: 2rem;
+  color: #333;
+  text-align: start;
+  width: 45%; /* Text takes 45% of the width */
+}
+
+.combined-box p {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: start;
+  width: 45%; /* Text takes 45% of the width */
+}
+
+.combined-box img {
+  width: 40%; /* Image takes 40% of the width */
+  height: 100%;
+  object-fit: cover; /* Ensure the image fills the height properly */
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .details-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .combined-box {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .combined-box h3,
+  .combined-box p {
+    width: 100%;
+  }
+
+  .combined-box img {
+    width: 100%;
+    height: auto;
+  }
+}
+.company-prep {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: white; /* Set background to white */
+  font-family: "Bona Nova SC", serif;
+}
+
+.company-prep h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.logo-slider {
+  width: 50vw; /* Adjusted width to 50vw */
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.logos {
+  display: flex;
+  animation: slide 18s infinite ease-in-out;
+}
+
+.logo {
+  flex: 0 0 100%; /* Show one logo at a time */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Show 1st logo */
+  }
+  16.66% {
+    transform: translateX(-100%); /* Show 2nd logo */
+  }
+  33.33% {
+    transform: translateX(-200%); /* Show 3rd logo */
+  }
+  50% {
+    transform: translateX(-300%); /* Show 4th logo */
+  }
+  66.66% {
+    transform: translateX(-400%); /* Show 5th logo */
+  }
+  83.33% {
+    transform: translateX(-500%); /* Show 6th logo */
+  }
+  100% {
+    transform: translateX(-600%); /* Loop back to the 1st logo */
+  }
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 50px auto;
+  gap: 20px;
+}
+
+/* Style for each FAQ box */
+.faqbox {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.faqbox:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the question text */
+.faqbox h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  display: inline-block;
+  font-family: "Bona Nova SC", serif;
+}
+
+/* Style for the icon (arrow) */
+.faqbox .icon {
+  font-size: 1.5rem;
+  color: #007BFF;
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when the box is active */
+.faqbox.active .icon {
+  transform: rotate(180deg);
+}
+
+/* Style for the answer box (initially hidden) */
+.answerbox {
+  display: none; /* Hidden by default */
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Show the answer when the 'show' class is added */
+.answerbox.show {
+  display: block;
+}

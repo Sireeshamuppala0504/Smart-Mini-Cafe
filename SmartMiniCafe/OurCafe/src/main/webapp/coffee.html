@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coffee</title>
+  <link rel="stylesheet" href="page1.css" />
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+  <!-- Product 1: Espresso -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg" alt="Espresso" />
+      <h3>Espresso</h3>
+      <p>Intense, rich, and full of bold flavor.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Espresso",
+        price: "₹240",
+        description: "Intense, rich, and full of bold flavor.",
+        image: "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2: Matcha Latte -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/18794176/pexels-photo-18794176.jpeg" alt="Matcha Latte" />
+      <h3>Matcha Latte</h3>
+      <p>Earthy matcha with creamy indulgence.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Matcha Latte",
+        price: "₹240",
+        description: "Earthy matcha with creamy indulgence.",
+        image: "https://images.pexels.com/photos/18794176/pexels-photo-18794176.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3: Latte -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/3354513/pexels-photo-3354513.jpeg" alt="Latte" />
+      <h3>Latte</h3>
+      <p>Silky milk with a gentle coffee embrace.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Latte",
+        price: "₹240",
+        description: "Silky milk with a gentle coffee embrace.",
+        image: "https://images.pexels.com/photos/3354513/pexels-photo-3354513.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4: Americano -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/28935033/pexels-photo-28935033.jpeg" alt="Americano" />
+      <h3>Americano</h3>
+      <p>Smooth, rich, and perfectly balanced.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Americano",
+        price: "₹280",
+        description: "Smooth, rich, and perfectly balanced.",
+        image: "https://images.pexels.com/photos/28935033/pexels-photo-28935033.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5: Black Coffee -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/27548812/pexels-photo-27548812.jpeg" alt="Black Coffee" />
+      <h3>Black Coffee</h3>
+      <p>Pure, strong, and full of character.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Black Coffee",
+        price: "₹200",
+        description: "Pure, strong, and full of character.",
+        image: "https://images.pexels.com/photos/27548812/pexels-photo-27548812.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6: Coffee with Chocolate -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/17506134/pexels-photo-17506134.jpeg" alt="Coffee with Chocolate" />
+      <h3>Coffee with Chocolate</h3>
+      <p>A perfect harmony of cocoa and coffee.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Coffee with Chocolate",
+        price: "₹240",
+        description: "A perfect harmony of cocoa and coffee.",
+        image: "https://images.pexels.com/photos/17506134/pexels-photo-17506134.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7: Cappuccino -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/302890/pexels-photo-302890.jpeg" alt="Cappuccino" />
+      <h3>Cappuccino</h3>
+      <p>Bold espresso with velvety frothed milk.</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Cappuccino",
+        price: "₹220",
+        description: "Bold espresso with velvety frothed milk.",
+        image: "https://images.pexels.com/photos/302890/pexels-photo-302890.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8: Affagato -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/10066817/pexels-photo-10066817.jpeg" alt="Affagato" />
+      <h3>Affagato</h3>
+      <p>Espresso meets ice cream for a heavenly blend.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Affagato",
+        price: "₹240",
+        description: "Espresso meets ice cream for a heavenly blend.",
+        image: "https://images.pexels.com/photos/10066817/pexels-photo-10066817.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9: Dalgona Coffee -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/4144465/pexels-photo-4144465.jpeg" alt="Dalgona Coffee" />
+      <h3>Dalgona Coffee</h3>
+      <p>Frothy, creamy, and irresistibly sweet.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Dalgona Coffee",
+        price: "₹280",
+        description: "Frothy, creamy, and irresistibly sweet.",
+        image: "https://images.pexels.com/photos/4144465/pexels-photo-4144465.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10: Iced Coffee -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/7488733/pexels-photo-7488733.jpeg" alt="Iced Coffee" />
+      <h3>Iced Coffee</h3>
+      <p>Smooth, refreshing, and perfectly cool.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Iced Coffee",
+        price: "₹200",
+        description: "Smooth, refreshing, and perfectly cool.",
+        image: "https://images.pexels.com/photos/7488733/pexels-photo-7488733.jpeg"
+      })'>Add to Cart</button>
+    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network error');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>

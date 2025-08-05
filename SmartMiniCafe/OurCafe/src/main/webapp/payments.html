@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Mini Cafe - Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf6f0;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .payment-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .amount {
+      font-size: 20px;
+      color: #007b5e;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .payment-options {
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .qr-code {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .instructions, .contact {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007b5e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005c4f;
+    }
+
+    @media (max-width: 600px) {
+      .payment-container {
+        padding: 20px;
+      }
+
+      .amount, label, button {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-container">
+  <h2>Scan & Pay</h2>
+  <p class="amount">Amount: ₹<span id="dynamicAmount">0.00</span></p>
+
+  <div class="payment-options">
+    <label><input type="radio" name="paymentApp" value="gpay" checked> Google Pay</label>
+    <label><input type="radio" name="paymentApp" value="phonepe"> PhonePe</label>
+    <label><input type="radio" name="paymentApp" value="paytm"> Paytm</label>
+  </div>
+
+  <div class="qr-code" id="qrcode"></div>
+
+  <p class="instructions">Scan the QR code using your preferred app</p>
+
+  <button onclick="confirmPayment()">Payment Done</button>
+
+  <p class="contact">Need help? Call us: 123-456-7890</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  const upiID = "smartcafe@upi"; // Replace with your actual UPI ID
+  const qrCodeContainer = document.getElementById("qrcode");
+  const amountSpan = document.getElementById("dynamicAmount");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const amount = urlParams.get("amount") || "0.00";
+  amountSpan.textContent = parseFloat(amount).toFixed(2);
+
+  function generateQR(app) {
+    const upiURL = upi;//pay?pa=${upiID}&pn=SmartMiniCafe&am=${amount}&cu=INR;
+    qrCodeContainer.innerHTML = "";
+    QRCode.toCanvas(document.createElement("canvas"), upiURL, { width: 200 }, function (err, canvas) {
+      if (!err) qrCodeContainer.appendChild(canvas);
+    });
+  }
+
+  document.querySelectorAll('input[name="paymentApp"]').forEach((radio) => {
+    radio.addEventListener("change", (e) => {
+      generateQR(e.target.value);
+    });
+  });
+
+  generateQR("gpay");
+
+  function confirmPayment() {
+    const selectedApp = document.querySelector('input[name="paymentApp"]:checked').value;
+
+    fetch("http://localhost:5000/payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: amount,
+        app: selectedApp,
+        timestamp: new Date().toISOString()
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert("Payment confirmed. Thank you!");
+    })
+    .catch(err => {
+      alert("Error confirming payment. Try again.");
+      console.error(err);
+    });
+  }
+</script>
+
+</body>
+</html>

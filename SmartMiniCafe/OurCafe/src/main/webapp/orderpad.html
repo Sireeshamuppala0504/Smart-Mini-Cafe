@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cafe Order Pad</title>
+<style>
+  :root {
+    --coffee-brown: #6F4E37;
+    --latte-cream: #F5F0E6;
+    --espresso-dark: #4B3621;
+    --milk-white: #654321;
+    --accent-gold: #D4AF37;
+    --parrot-green: #28a745;
+    --error-red: #dc3545;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--milk-white);
+    margin: 0;
+    padding: 20px;
+  }
+
+  .order-pad-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+   .order-pad {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--espresso-dark);
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    font-size: 24px;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--coffee-brown);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(111, 78, 55, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    color: var(--espresso-dark);
+    transition: all 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .submit-btn {
+    width: 100%;
+    background-color: var(--parrot-green);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+
+  .submit-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .error-message {
+    color: var(--error-red);
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 15px;
+    }
+    
+    .order-pad {
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="order-pad-container">
+  <div class="order-pad">
+    <h1>CAFE ORDER PAD</h1>
+    
+    <div class="form-group">
+      <label for="table">Table Number</label>
+      <input type="text" id="table" placeholder="Enter table number or 'Takeaway'" required />
+      <div id="tableError" class="error-message">Please enter a table number</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="notes">Order Notes</label>
+      <textarea id="notes" placeholder="Special instructions, allergies, modifications, etc."></textarea>
+    </div>
+    
+    <button class="submit-btn" onclick="submitOrder()">Submit Order</button>
+  </div>
+</div>
+
+<script>
+  // Generate dynamic table numbers when page loads
+  document.addEventListener("DOMContentLoaded", function() {
+    // You could also fetch available tables from a server here
+    // For now we'll just focus on the free-form input
+  });
+
+  function submitOrder() {
+    try {
+      // Validate inputs
+      const tableInput = document.getElementById("table");
+      const tableError = document.getElementById("tableError");
+      
+      if (!tableInput.value.trim()) {
+        tableInput.focus();
+        tableError.style.display = "block";
+        return;
+      } else {
+        tableError.style.display = "none";
+      }
+      
+      // Get cart items
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      
+      if (cartItems.length === 0) {
+        alert("Your cart is empty. Please add items before placing an order.");
+        return;
+      }
+      
+      // Calculate total amount
+      const totalAmount = cartItems.reduce((sum, item) => {
+        let price = 0;
+        if (typeof item.price === 'string') {
+          price = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+        } else {
+          price = item.price || 0;
+        }
+        return sum + (price);
+      }, 0);
+      
+      // Get notes
+      const notes = document.getElementById("notes").value.trim();
+      
+      // Prepare order data
+      const orderData = {
+        id: Date.now().toString(),
+        tableNumber: tableInput.value.trim(),
+        notes,
+        items: cartItems,
+        totalAmount: totalAmount.toFixed(2),
+        status: "pending",
+        date: new Date().toLocaleString(),
+        estimatedTime: new Date(Date.now() + 15*60000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+      };
+      
+      // Save order to orders history
+      saveOrderToHistory(orderData);
+      
+      // Save as current order for confirmation page
+      localStorage.setItem("currentOrder", JSON.stringify(orderData));
+      
+      // Clear cart
+      localStorage.removeItem("cartItems");
+      
+      // Redirect to confirmation page
+      if (window.top) {
+        window.top.location.href = "orderconform.html";
+      } else {
+        window.location.href = "orderconform.html";
+      }
+    } catch (error) {
+      console.error("Error submitting order:", error);
+      alert("An error occurred while submitting your order. Please try again.");
+    }
+  }
+
+  function saveOrderToHistory(newOrder) {
+    // Get existing orders or initialize empty array
+    const allOrders = JSON.parse(localStorage.getItem("cafeOrders")) || [];
+    
+    // Add new order
+    allOrders.unshift(newOrder); // Add to beginning of array
+    
+    // Save back to localStorage
+    localStorage.setItem("cafeOrders", JSON.stringify(allOrders));
+  }
+</script>
+</body>
+</html>

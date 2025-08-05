@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastries</title>
+  <link rel="stylesheet" href="page1.css">
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Link -->
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://butternutbakeryblog.com/wp-content/uploads/2023/04/chocolate-cake.jpg">
+      <h3>Chocolate Cake</h3>
+      <p>Rich, moist, and loaded with chocolatey goodness!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Chocolate Cake",
+        price: "₹240",
+        description: "Rich, moist, and loaded with chocolatey goodness!",
+        image: "https://butternutbakeryblog.com/wp-content/uploads/2023/04/chocolate-cake.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/564x/83/a8/94/83a8943b9df1d8b77aa1128afca17e88.jpg">
+      <h3>Chocolate Brownie</h3>
+      <p>Fudgy, gooey, and simply irresistible!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Chocolate Brownie",
+        price: "₹240",
+        description: "Fudgy, gooey, and simply irresistible!",
+        image: "https://i.pinimg.com/564x/83/a8/94/83a8943b9df1d8b77aa1128afca17e88.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://wowitsveggie.com/wp-content/uploads/2020/09/vegan-peanut-butter-blossoms-vertical-683x1024.jpg">
+      <h3>Peanut Butter Blossoms</h3>
+      <p>Sweet, nutty, and chocolate-kissed perfection!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Peanut Butter Blossoms",
+        price: "₹240",
+        description: "Sweet, nutty, and chocolate-kissed perfection!",
+        image: "https://wowitsveggie.com/wp-content/uploads/2020/09/vegan-peanut-butter-blossoms-vertical-683x1024.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/657087682/photo/rajwari-or-rajwadi-sweet-kesar-badam-pista-kulfi-or-ice-cream-candy.jpg?s=612x612&w=0&k=20&c=ym-FNQ2JE1N7-IWm_7s8OeCOJmRXEP5HaAbxATJF12c=">
+      <h3>Kulfi</h3>
+      <p>The creamiest desi ice cream you'll ever taste!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Kulfi",
+        price: "₹280",
+        description: "The creamiest desi ice cream you'll ever taste!",
+        image: "https://media.istockphoto.com/id/657087682/photo/rajwari-or-rajwadi-sweet-kesar-badam-pista-kulfi-or-ice-cream-candy.jpg?s=612x612&w=0&k=20&c=ym-FNQ2JE1N7-IWm_7s8OeCOJmRXEP5HaAbxATJF12c="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://cbx-prod.b-cdn.net/COLOURBOX55697940.jpg?width=800&height=800&quality=70">
+      <h3>Apple Pie</h3>
+      <p>Warm, cozy, and packed with cinnamon goodness!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Apple Pie",
+        price: "₹200",
+        description: "Warm, cozy, and packed with cinnamon goodness!",
+        image: "https://cbx-prod.b-cdn.net/COLOURBOX55697940.jpg?width=800&height=800&quality=70"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/homemade-indian-gulab-jamun-dessert-syrup-pistacchios-356776898.jpg">
+      <h3>Gulab Jamun</h3>
+      <p>Soft, syrupy, and melt-in-your-mouth sweet.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Gulab Jamun",
+        price: "₹240",
+        description: "Soft, syrupy, and melt-in-your-mouth sweet.",
+        image: "https://thumbs.dreamstime.com/b/homemade-indian-gulab-jamun-dessert-syrup-pistacchios-356776898.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://kurryleaves.net/wp-content/uploads/2014/06/kaju-katli-indian-sweets-diwali.jpg">
+      <h3>Kaju Katli</h3>
+      <p>Smooth, rich, and melt-in-your-mouth perfection!</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Kaju Katli",
+        price: "₹220",
+        description: "Smooth, rich, and melt-in-your-mouth perfection!",
+        image: "https://kurryleaves.net/wp-content/uploads/2014/06/kaju-katli-indian-sweets-diwali.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://t3.ftcdn.net/jpg/13/12/80/14/360_F_1312801404_uVtCh432dwVKDUSmIApc8nM7FIMLBDYk.jpg">
+      <h3>Jalebi</h3>
+      <p>Crispy, syrupy, and utterly irresistible!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Jalebi",
+        price: "₹240",
+        description: "Crispy, syrupy, and utterly irresistible!",
+        image: "https://t3.ftcdn.net/jpg/13/12/80/14/360_F_1312801404_uVtCh432dwVKDUSmIApc8nM7FIMLBDYk.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1408919738/photo/angoori-ras-malai-is-an-indian-dessert.jpg?s=612x612&w=0&k=20&c=-StwcjS5WzzLInYXqmee1-ecqVE11oscOglcYllJI-Y=">
+      <h3>Rasmalai</h3>
+      <p>Soft, creamy, and melt-in-your-mouth goodness!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Rasmalai",
+        price: "₹280",
+        description: "Soft, creamy, and melt-in-your-mouth goodness!",
+        image: "https://media.istockphoto.com/id/1408919738/photo/angoori-ras-malai-is-an-indian-dessert.jpg?s=612x612&w=0&k=20&c=-StwcjS5WzzLInYXqmee1-ecqVE11oscOglcYllJI-Y="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1256834456/photo/strawberry-falooda.jpg?s=612x612&w=0&k=20&c=6HJnSs8SwEx0kcl5MM5BP3OK5TFxptoBXkO8mrKDW5o=">
+      <h3>Falooda</h3>
+      <p>A dreamy, creamy, and refreshing delight!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Falooda",
+        price: "₹200",
+        description: "A dreamy, creamy, and refreshing delight!",
+        image: "https://media.istockphoto.com/id/1256834456/photo/strawberry-falooda.jpg?s=612x612&w=0&k=20&c=6HJnSs8SwEx0kcl5MM5BP3OK5TFxptoBXkO8mrKDW5o="
+      })'>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    // Load initial cart count
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error loading cart count:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>

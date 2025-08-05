@@ -1,0 +1,117 @@
+/* Resetting styles */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+/* Body */  
+body {  
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://img.pikbest.com/wp/202344/plain-texture-background-and-elegant-brown-gradient-abstract_9932766.jpg!sw800');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 20px;
+    min-height: 100vh;
+}  
+
+/* Header Image Styling */  
+.header-image {  
+    max-width: 50px; /* Width of the image */  
+    height: auto; /* Maintain aspect ratio */  
+    margin-right: 10px; /* Space between the image and text */  
+    vertical-align: middle; /* Align with text */  
+}  
+
+header {  
+    display: flex; /* Use flexbox for alignment */  
+    align-items: center; /* Center items vertically */  
+    text-align: center;  
+    padding: 20px;  
+    background-color: rgb(65, 44, 20); /* Blue header background */  
+    color: white; /* White text color */  
+    border-radius: 10px; /* Rounded corners */  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */  
+    width:1480px;
+    font-size:20px;
+}  
+/* Cart Container */  
+.cart-container {  
+    background-color: white; /* White card background */  
+    padding: 30px; /* Padding for space */  
+    border-radius: 10px; /* Rounded corners */  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */  
+    max-width: 1000px; /* Max width */  
+    margin: 40px auto; /* Center container with margin */  
+    transition: transform 0.3s ease; /* Transition effect */  
+    font-size:20px;
+}  
+
+.cart-container:hover {  
+    transform: translateY(-5px); /* Lift effect on hover */  
+}  
+
+/* Cart Item Container */  
+.cart-item-container {  
+    margin-top: 20px;  
+    padding: 20px; /* Increase padding for a spacious feel */  
+    border: 1px solid #ddd; /* Light border */  
+    border-radius: 5px; /* Rounded corners */  
+    min-height: 500px; /* Increased min height for more space */  
+    background-color: #dddcd9; /* Light item container background */  
+}    
+
+/* Cart Item */  
+.cart-item {  
+    padding: 10px;  
+    border-bottom: 1px solid #ddd; /* Divider */  
+    transition: background-color 0.3s ease; /* Transition for hover effect */  
+}  
+
+.cart-item:last-child {  
+    border-bottom: none; /* Remove border for last item */  
+}  
+
+.cart-item:hover {  
+    background-color: #e8f0fe; /* Lighter blue on hover */  
+}  
+
+/* Order Button Container */  
+.order-button-container {  
+    text-align: right; /* Center align */  
+    margin-top: 20px; /* Margin on top */  
+}  
+
+/* Order Button */  
+.order-button {  
+    padding: 15px 35px; /* Increased padding */  
+    font-size: 18px; /* Larger font size */  
+    background-color: #28a745; /* Green button background */  
+    color: white; /* White text */  
+    border: none; /* No border */  
+    border-radius: 5px; /* Rounded corners */  
+    cursor: pointer; /* Pointer cursor */  
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */  
+}  
+
+.order-button:hover {  
+    background-color: #218838; /* Darker green on hover */  
+    transform: scale(1.05); /* Slight scale up on hover */  
+}  
+
+.order-button:focus {  
+    outline: none; /* Remove outline */  
+}  
+
+/* Mobile Responsiveness */  
+@media (max-width: 600px) {  
+    .cart-container {  
+        padding: 20px; /* Reduced padding on small screens */  
+    }  
+
+    .order-button {  
+        width: 100%; /* Full width on small screens */  
+    }  
+}  

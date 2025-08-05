@@ -1,0 +1,130 @@
+<!DOCTYPE html>  
+<html lang="en">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>The Coffee Club</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+
+<body>  
+    <!-- Background Slideshow Container -->
+    <div class="slideshow-container">
+        <div class="slide active" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/876/132/1002/coffee-cup-coffee-beans-aroma-wallpaper-preview.jpg')"></div>
+        <div class="slide" style="background-image: url('https://thumbor.rouvy.com/19pp7YVdVXQ--0Xkj24olB5st7E=/center/middle/https%3A%2F%2Fcdn.rouvy.com%2Fcms%2Fshutterstock_2052696470_min_deaebabc60%2Fshutterstock_2052696470_min_deaebabc60.jpg')"></div>
+        <div class="slide" style="background-image: url('https://thumb.photo-ac.com/69/69e3d50fec7aa889a0888839f9532368_t.jpeg')"></div>
+        <div class="slide" style="background-image: url('https://img.freepik.com/premium-photo/coffee-cup-with-beans_522560-14653.jpg')"></div>
+        <div class="slide" style="background-image: url('https://media.istockphoto.com/id/1467199060/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.jpg?s=612x612&w=0&k=20&c=OnS8_6FM5ussfSGmjpDD-GofERg2UbItdxShIAA90sQ=')"></div>
+    </div>
+    
+    <div class="content-wrapper">
+        <header>  
+            <div class="logo">  
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1b/a3/d2/logo.jpg?w=700&h=400&s=1" alt="Smart Cafe Logo">  
+                <h1>The Coffee Club</h1>  
+            </div>  
+        </header>  
+        <!-- Intro Section -->  
+        <section class="intro-section">  
+            <div class="intro-box">  
+                <h2>Start Your Day With Fresh Coffee</h2>  
+                <p>  
+                    Coffee is a popular and beloved beverage enjoyed by people around the world. Awaken your senses with a steaming cup of liquid motivation.  
+                </p>  
+            </div>  
+            <!-- Start Button -->  
+            <div class="table-selection">  
+                <button class="start-button" onclick="redirectToCafe()">Start</button>  
+            </div>  
+        </section>  
+        
+        <section class="coffee-gallery-section">  
+            <div class="coffee-intro">  
+                <div class="text-box">  
+                    <h2>Discover the Best Coffee</h2>  
+                    <p>At our house, it's a coffee thing! We provide you with coffee unlike any before. Hand-selected beans and a masterfully brewed aroma await you.   
+                        Our menu is crafted to bring the best experience for all coffee lovers. There's no middle man-just us, our beans, and you. Come taste what you have been missing!</p>  
+                </div>  
+                <div class="image-box">  
+                    <video autoplay loop muted playsinline>
+                        <source src="https://videos.pexels.com/video-files/6204972/6204972-uhd_2560_1440_24fps.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>  
+            </div>  
+
+            <div class="gallery-box">  
+                <h2>Our Coffee and Treats</h2>  
+                <div class="gallery-container">
+                    <button class="nav-arrow left-arrow" onclick="moveGallery(-1)">&#10094;</button>
+                    <div class="photo-gallery">  
+                        <div class="photo-box">  
+                            <img src="https://www.baltana.com/files/wallpapers-2/Coffee-HD-Images-03608.jpg" alt="Food 1">  
+                            <div class="photo-caption">Coffee</div> 
+                        </div>  
+                        <div class="photo-box">  
+                            <img src="https://w0.peakpx.com/wallpaper/43/1010/HD-wallpaper-tea-cup-tea-concepts-glass-cups-for-tea-black-tea.jpg" alt="Food 2">
+                            <div class="photo-caption">Tea</div>    
+                        </div>  
+                        <div class="photo-box">  
+                            <img src="https://www.coldist.com/wp-content/uploads/2020/07/Non-Alcoholic-Drink-Ideas.jpg" alt="Food 3">
+                            <div class="photo-caption">Beverages</div>  
+                        </div>  
+                        <div class="photo-box">  
+                            <img src="https://media.istockphoto.com/id/926990564/photo/chocolate-milk-and-whipped-cream.jpg?s=612x612&w=0&k=20&c=LabS3iGKio9kYS7OUGsosTm0Bb4XKY8WkXPer_RU3IQ=" alt="Food 4">
+                            <div class="photo-caption">Shakes</div> 
+                        </div>  
+                        <div class="photo-box">  
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/trvhkvcmtdk0gd99lfhf" alt="Food 5">
+                            <div class="photo-caption">Pastries & Desserts</div>                  
+                        </div>  
+                        <div class="photo-box">  
+                            <img src="https://rukminim2.flixcart.com/image/850/1000/kjd6nww0-0/spice-masala/u/z/1/150-cheese-chataka-popcorn-seasoning-150-g-cheesy-spicy-unique-original-imafyyd3pdxvvhnn.jpeg?q=90&crop=false" alt="Food 6">
+                            <div class="photo-caption">Snacks</div>  
+                        </div>  
+                    </div>  
+                    <button class="nav-arrow right-arrow" onclick="moveGallery(1)">&#10095;</button>
+                </div>
+            </div>  
+        </section>
+    </div>
+    
+    <script>  
+        function redirectToCafe() {  
+            window.location.href = 'cafe.html';  
+        }
+
+        let currentScroll = 0;
+        const gallery = document.querySelector('.photo-gallery');
+        const galleryWidth = gallery.scrollWidth;
+        const visibleWidth = gallery.offsetWidth;
+
+        function moveGallery(direction) {
+            const scrollAmount = 300;
+            currentScroll += direction * scrollAmount;
+            currentScroll = Math.max(0, Math.min(currentScroll, galleryWidth - visibleWidth));
+            gallery.scrollTo({
+                left: currentScroll,
+                behavior: 'smooth'
+            });
+        }
+
+        // Background Slideshow Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            const slideInterval = 5000; // Change image every 5 seconds
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Start the slideshow
+            setInterval(nextSlide, slideInterval);
+        });
+    </script>  
+</body>  
+</html>

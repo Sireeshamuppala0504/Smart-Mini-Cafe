@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Receiving</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .payment-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            background-color: rgb(183, 124, 60);
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        
+        .payment-header {
+            text-align: center;
+            color: #333;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 18px;
+            margin-top: 35px;
+        }
+        
+        .payment-table th {
+            background-color: #ddd;
+            color: black;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .empty-message {
+            padding: 30px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 16px;
+            border: 1px solid #ecf0f1;
+            border-top: none;
+            background-color: #fdfdfd;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">Payment Receiving</div>
+        
+        <table class="payment-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Table Number</th>
+                    <th>Amount Received</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" class="empty-message">No payments received yet</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

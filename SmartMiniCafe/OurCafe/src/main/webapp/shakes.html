@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shakes</title>
+  <link rel="stylesheet" href="page1.css">
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Link -->
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/free-photo/glass-filled-with-chocolate-ice-cream-dessert_23-2148425396.jpg">
+      <h3>Chocolate</h3>
+      <p>Rich, creamy, and pure chocolate indulgence!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Chocolate Shake",
+        price: "₹240",
+        description: "Rich, creamy, and pure chocolate indulgence!",
+        image: "https://img.freepik.com/free-photo/glass-filled-with-chocolate-ice-cream-dessert_23-2148425396.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://www.aimeemars.com/wp-content/uploads/2022/02/Oreo-Milkshake.jpg">
+      <h3>Oreo</h3>
+      <p>A dreamy blend of cookies and cream!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Oreo Shake",
+        price: "₹240",
+        description: "A dreamy blend of cookies and cream!",
+        image: "https://www.aimeemars.com/wp-content/uploads/2022/02/Oreo-Milkshake.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/c5/9c/f1/c59cf18bda69277ee0d549bc7d851d3c.jpg">
+      <h3>KitKat</h3>
+      <p>Crunchy, chocolatey, and utterly indulgent!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "KitKat Shake",
+        price: "₹240",
+        description: "Crunchy, chocolatey, and utterly indulgent!",
+        image: "https://i.pinimg.com/736x/c5/9c/f1/c59cf18bda69277ee0d549bc7d851d3c.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/166668038/photo/fruit-smoothie.jpg?s=612x612&w=0&k=20&c=tZOwvmL5FH8RdO_2O8wdp5MmLrgagPFQcLNV5KYAUPg=">
+      <h3>Raspberry</h3>
+      <p>A perfect blend of sweet, tart, and creamy delight!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Raspberry Shake",
+        price: "₹280",
+        description: "A perfect blend of sweet, tart, and creamy delight!",
+        image: "https://media.istockphoto.com/id/166668038/photo/fruit-smoothie.jpg?s=612x612&w=0&k=20&c=tZOwvmL5FH8RdO_2O8wdp5MmLrgagPFQcLNV5KYAUPg="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/172426129/photo/vanilla-milkshake.jpg?s=612x612&w=0&k=20&c=t9eWeUR9phK1jpzahvlmaKXvYiQi0Vb-LMCLIu3Ujrc=">
+      <h3>Vanilla</h3>
+      <p>Classic, creamy, and oh-so-smooth!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Vanilla Shake",
+        price: "₹200",
+        description: "Classic, creamy, and oh-so-smooth!",
+        image: "https://media.istockphoto.com/id/172426129/photo/vanilla-milkshake.jpg?s=612x612&w=0&k=20&c=t9eWeUR9phK1jpzahvlmaKXvYiQi0Vb-LMCLIu3Ujrc="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://littlesunnykitchen.com/wp-content/uploads/2023/06/Kiwi-Smoothie-1.jpg">
+      <h3>Kiwi</h3>
+      <p>A refreshing burst of tangy-sweet kiwi goodness!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Kiwi Shake",
+        price: "₹240",
+        description: "A refreshing burst of tangy-sweet kiwi goodness!",
+        image: "https://littlesunnykitchen.com/wp-content/uploads/2023/06/Kiwi-Smoothie-1.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/smoothies-blackberry-black-currant-yogurt-white-background-49379594.jpg">
+      <h3>Black Currant</h3>
+      <p>Rich, bold, and bursting with berry flavor!</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Black Currant Shake",
+        price: "₹220",
+        description: "Rich, bold, and bursting with berry flavor!",
+        image: "https://thumbs.dreamstime.com/b/smoothies-blackberry-black-currant-yogurt-white-background-49379594.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/015/752/233/small_2x/mango-smoothie-with-honey-and-coconut-photo.jpg">
+      <h3>Mango</h3>
+      <p>A golden, creamy delight packed with tropical goodness!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Mango Shake",
+        price: "₹240",
+        description: "A golden, creamy delight packed with tropical goodness!",
+        image: "https://static.vecteezy.com/system/resources/thumbnails/015/752/233/small_2x/mango-smoothie-with-honey-and-coconut-photo.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6UHBddjbijeDEUvht73yc2DDOmT5FkUtE41a0zIfkY1XbFy31Srk2ZowKbacDSHZO90E&usqp=CAU">
+      <h3>Strawberry</h3>
+      <p>A creamy, dreamy burst of berry sweetness!</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Strawberry Shake",
+        price: "₹280",
+        description: "A creamy, dreamy burst of berry sweetness!",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6UHBddjbijeDEUvht73yc2DDOmT5FkUtE41a0zIfkY1XbFy31Srk2ZowKbacDSHZO90E&usqp=CAU"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/banana-milkshake-glass-white-background-top-view-vertical-85291493.jpg">
+      <h3>Banana</h3>
+      <p>Smooth, creamy, and packed with banana goodness!</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Banana Shake",
+        price: "₹200",
+        description: "Smooth, creamy, and packed with banana goodness!",
+        image: "https://thumbs.dreamstime.com/b/banana-milkshake-glass-white-background-top-view-vertical-85291493.jpg"
+      })'>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    // Load initial cart count
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error loading cart count:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>

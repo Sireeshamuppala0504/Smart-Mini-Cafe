@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snacks</title>
+  <link rel="stylesheet" href="page1.css">
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Link -->
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1157698777/photo/bhel-puri.jpg?s=612x612&w=0&k=20&c=D8eUz7EC3GD9OzAHs4blSM676fJsHqdNSXjW0UMuYE0=">
+      <h3>Bhel</h3>
+      <p>A tangy, spicy, and crunchy street food delight.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Bhel",
+        price: "₹240",
+        description: "A tangy, spicy, and crunchy street food delight.",
+        image: "https://media.istockphoto.com/id/1157698777/photo/bhel-puri.jpg?s=612x612&w=0&k=20&c=D8eUz7EC3GD9OzAHs4blSM676fJsHqdNSXjW0UMuYE0="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/14179984/pexels-photo-14179984.jpeg">
+      <h3>Tacos</h3>
+      <p>A crunchy shell packed with bold flavors.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Tacos",
+        price: "₹240",
+        description: "A crunchy shell packed with bold flavors.",
+        image: "https://images.pexels.com/photos/14179984/pexels-photo-14179984.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1080622302/photo/shegaon-or-rajasthani-kachori-served-with-green-chutney-and-tomato-ketchup.jpg?s=612x612&w=0&k=20&c=CcjrGiHsN3YiAYaXmF3BYAL6YDh94MdNQq9OxcCCkoo=">
+      <h3>Kachori</h3>
+      <p>A crunchy delight with a flavorful filling.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Kachori",
+        price: "₹240",
+        description: "A crunchy delight with a flavorful filling.",
+        image: "https://media.istockphoto.com/id/1080622302/photo/shegaon-or-rajasthani-kachori-served-with-green-chutney-and-tomato-ketchup.jpg?s=612x612&w=0&k=20&c=CcjrGiHsN3YiAYaXmF3BYAL6YDh94MdNQq9OxcCCkoo="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg">
+      <h3>Samosa</h3>
+      <p>Crispy, stuffed, and bursting with spices.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Samosa",
+        price: "₹280",
+        description: "Crispy, stuffed, and bursting with spices.",
+        image: "https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://pickyeaterblog.com/wp-content/uploads/2022/10/crispy-naan-bread-pizza.jpg">
+      <h3>Bread Pizza</h3>
+      <p>A quick and cheesy bite of happiness.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Bread Pizza",
+        price: "₹200",
+        description: "A quick and cheesy bite of happiness.",
+        image: "https://pickyeaterblog.com/wp-content/uploads/2022/10/crispy-naan-bread-pizza.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/healthy-snacks-dry-bananas-bowl-dried-fruits-vertical-photo-organic-banana-chips-fresh-background-190423117.jpg">
+      <h3>Banana Chips</h3>
+      <p>Crispy, crunchy, and naturally tasty.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Banana Chips",
+        price: "₹240",
+        description: "Crispy, crunchy, and naturally tasty.",
+        image: "https://thumbs.dreamstime.com/b/healthy-snacks-dry-bananas-bowl-dried-fruits-vertical-photo-organic-banana-chips-fresh-background-190423117.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/96/39/ef/9639ef8366b559f188e1701d99915507.jpg">
+      <h3>Pav Bhaji</h3>
+      <p>Spicy, buttery, and irresistibly delicious!</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Pav Bhaji",
+        price: "₹220",
+        description: "Spicy, buttery, and irresistibly delicious!",
+        image: "https://i.pinimg.com/736x/96/39/ef/9639ef8366b559f188e1701d99915507.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://culinarychaser.com/wp-content/uploads/2021/12/Cheese-corn-ball.jpeg">
+      <h3>Corn Cheese Balls</h3>
+      <p>Crunchy outside, cheesy inside-pure bliss!</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Corn Cheese Balls",
+        price: "₹240",
+        description: "Crunchy outside, cheesy inside-pure bliss!",
+        image: "https://culinarychaser.com/wp-content/uploads/2021/12/Cheese-corn-ball.jpeg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card">
+      <img src="https://www.sharmispassions.com/wp-content/uploads/2024/09/chilli-cheese-toast6.jpg">
+      <h3>Cheese Chilly Toast</h3>
+      <p>Spicy, cheesy, and packed with flavor.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Cheese Chilly Toast",
+        price: "₹280",
+        description: "Spicy, cheesy, and packed with flavor.",
+        image: "https://www.sharmispassions.com/wp-content/uploads/2024/09/chilli-cheese-toast6.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card">
+      <img src="https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg">
+      <h3>French Fries</h3>
+      <p>Crispy, golden, and irresistibly delicious.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "French Fries",
+        price: "₹200",
+        description: "Crispy, golden, and irresistibly delicious.",
+        image: "https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg"
+      })'>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    // Load initial cart count
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error loading cart count:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>

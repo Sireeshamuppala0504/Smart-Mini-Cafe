@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea</title>
+  <link rel="stylesheet" href="page1.css">
+  <style>
+    .cart-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #D4AF37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    .cart-link a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Link -->
+  <div class="cart-link">
+    <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+
+  <div class="container">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/green-tea-17122888.jpg">
+      <h3>Green Tea</h3>
+      <p>Light, refreshing, and naturally soothing.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Green Tea",
+        price: "₹240",
+        description: "Light, refreshing, and naturally soothing.",
+        image: "https://thumbs.dreamstime.com/b/green-tea-17122888.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1165992057/photo/black-garlic-tea.jpg?s=612x612&w=0&k=20&c=a0cYjd7-te3X6fZGBZ7lkb7Hoc5i2TjW1wvg_odVuVE=">
+      <h3>Garlic Tea</h3>
+      <p>Unconventional, bold, and packed with benefits.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Garlic Tea",
+        price: "₹240",
+        description: "Unconventional, bold, and packed with benefits.",
+        image: "https://media.istockphoto.com/id/1165992057/photo/black-garlic-tea.jpg?s=612x612&w=0&k=20&c=a0cYjd7-te3X6fZGBZ7lkb7Hoc5i2TjW1wvg_odVuVE="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgxUR97pPK3cITNpLOh9F7s5rsE9pDGRQxlQjoIWQ6S5DGp9pHznhwM6Ygymb1bd1hako&usqp=CAU">
+      <h3>Ginger Tea</h3>
+      <p>A fiery kick for warmth and comfort.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Ginger Tea",
+        price: "₹240",
+        description: "A fiery kick for warmth and comfort.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgxUR97pPK3cITNpLOh9F7s5rsE9pDGRQxlQjoIWQ6S5DGp9pHznhwM6Ygymb1bd1hako&usqp=CAU"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://media.istockphoto.com/id/1372776350/photo/curcuma-longa-turmeric-and-ginger-powder-rhizomes-and-tea.jpg?s=612x612&w=0&k=20&c=DJCmVAvC8aqakch1clTBXwXtXc1JLCnGRCuKicjVkrA=">
+      <h3>Turmeric Tea</h3>
+      <p>Golden goodness packed with wellness.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Turmeric Tea",
+        price: "₹280",
+        description: "Golden goodness packed with wellness.",
+        image: "https://media.istockphoto.com/id/1372776350/photo/curcuma-longa-turmeric-and-ginger-powder-rhizomes-and-tea.jpg?s=612x612&w=0&k=20&c=DJCmVAvC8aqakch1clTBXwXtXc1JLCnGRCuKicjVkrA="
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/free-photo/oolong-green-tea-teapot-bowl_1150-23594.jpg">
+      <h3>Oolong Tea</h3>
+      <p>A perfect balance of floral aroma and rich flavor.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Oolong Tea",
+        price: "₹200",
+        description: "A perfect balance of floral aroma and rich flavor.",
+        image: "https://img.freepik.com/free-photo/oolong-green-tea-teapot-bowl_1150-23594.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <img src="https://thumbs.dreamstime.com/b/winter-spicy-masala-tea-cookies-vertical-top-view-132160955.jpg">
+      <h3>Masala Tea</h3>
+      <p>A bold blend of spices for a warm, aromatic experience.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Masala Tea",
+        price: "₹240",
+        description: "A bold blend of spices for a warm, aromatic experience.",
+        image: "https://thumbs.dreamstime.com/b/winter-spicy-masala-tea-cookies-vertical-top-view-132160955.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/4c/f1/0d/4cf10db3838f0e0180909c5425830b61.jpg">
+      <h3>Black Tea</h3>
+      <p>Bold, strong, and timelessly classic.</p>
+      <p class="price">₹220</p>
+      <button onclick='addToCart({
+        name: "Black Tea",
+        price: "₹220",
+        description: "Bold, strong, and timelessly classic.",
+        image: "https://i.pinimg.com/736x/4c/f1/0d/4cf10db3838f0e0180909c5425830b61.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <img src="https://img.freepik.com/premium-photo/tall-glass-refreshing-iced-tea-with-lemon-slices-mint-white-background-vertical-image_174533-97713.jpg">
+      <h3>Lemon Ice Tea</h3>
+      <p>A zesty and refreshing burst of citrus goodness.</p>
+      <p class="price">₹240</p>
+      <button onclick='addToCart({
+        name: "Lemon Ice Tea",
+        price: "₹240",
+        description: "A zesty and refreshing burst of citrus goodness.",
+        image: "https://img.freepik.com/premium-photo/tall-glass-refreshing-iced-tea-with-lemon-slices-mint-white-background-vertical-image_174533-97713.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="product-card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBnN_TqgNV091fklgrQlUO9MdmDy2AryzDl0qlVv6-eAn6o4InUgwPz-JYUfD3Lm6R4K1g6zMz4GHx3xRuvuZlMobg1aD6ftkCiERDj72TjgSrG9lS1ACeITrh4aj3wPDmWr4zp7iXlMo8/d-rw/peach+iced+tea+recipe+%25282%2529.jpg">
+      <h3>Peach Ice Tea</h3>
+      <p>Sweet, smooth, and refreshingly peachy.</p>
+      <p class="price">₹280</p>
+      <button onclick='addToCart({
+        name: "Peach Ice Tea",
+        price: "₹280",
+        description: "Sweet, smooth, and refreshingly peachy.",
+        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBnN_TqgNV091fklgrQlUO9MdmDy2AryzDl0qlVv6-eAn6o4InUgwPz-JYUfD3Lm6R4K1g6zMz4GHx3xRuvuZlMobg1aD6ftkCiERDj72TjgSrG9lS1ACeITrh4aj3wPDmWr4zp7iXlMo8/d-rw/peach+iced+tea+recipe+%25282%2529.jpg"
+      })'>Add to Cart</button>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="product-card">
+      <img src="https://t4.ftcdn.net/jpg/08/05/75/67/360_F_805756738_5EkGDEbXM6fbEVvCcsHDJo6Lp6F8RPUT.jpg">
+      <h3>Litchi Ice Tea</h3>
+      <p>A fruity and refreshing sip of delight.</p>
+      <p class="price">₹200</p>
+      <button onclick='addToCart({
+        name: "Litchi Ice Tea",
+        price: "₹200",
+        description: "A fruity and refreshing sip of delight.",
+        image: "https://t4.ftcdn.net/jpg/08/05/75/67/360_F_805756738_5EkGDEbXM6fbEVvCcsHDJo6Lp6F8RPUT.jpg"
+      })'>Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    // Load initial cart count
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+
+    function updateCartCount() {
+      fetch('GetCartServlet', {
+        credentials: 'include'
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(items => {
+          document.getElementById('cartCount').textContent = items.length;
+        })
+        .catch(error => {
+          console.error('Error loading cart count:', error);
+          document.getElementById('cartCount').textContent = '0';
+        });
+    }
+
+    function addToCart(product) {
+      const formData = new URLSearchParams();
+      formData.append('itemName', product.name);
+      formData.append('itemPrice', product.price);
+      formData.append('itemDescription', product.description);
+      formData.append('itemImage', product.image);
+
+      fetch('AddToCartServlet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
+        credentials: 'include'
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to add item');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('cartCount').textContent = data.cartSize;
+        alert(`${product.name} added to cart!`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to add item to cart.');
+      });
+    }
+  </script>
+</body>
+</html>
